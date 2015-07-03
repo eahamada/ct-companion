@@ -1,22 +1,20 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.cgi.ct.companion" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CT-Companion</name>
-    <description>
-       Yet Another Conference Companion
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.ionicframework.conference261401" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>CT-Companion</name>
+  <description>
+    Yet Another Conference Companion 
     </description>
-    <author email="elarif.ahamada@gmail.com" href="http://cordova.io">
-      El-Arif AHAMADA
+    <author email="elarif.ahamada@gmail.com" href="https://github.com/eahamada">
+      Me, myself and I.
     </author>
-    <content src="index.html" />
-    <plugin name="cordova-plugin-whitelist" version="1" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
+  <content src="index.html"/>
+  <access origin="*"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
 </widget>
