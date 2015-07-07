@@ -1,12 +1,10 @@
 {
   "name": "ctcompanion",
-  "version": "0.0.0",
-  "dependencies": {},
-  "repository": {},
+  "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^2.0.0",
-    "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
@@ -26,16 +24,18 @@
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
+    "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
-    "load-grunt-tasks": "^3.1.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
+  "postinstall": "bower update",
+    "prestart": "npm update",
     "test": "grunt test"
   }
 }

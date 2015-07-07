@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 
 /**
@@ -9,91 +10,26 @@
  * Main module of the application.
  */
 angular
-.module('ctCompanionApp', [
-    'ui.router',
-    'ngMaterial'
-])
-.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider, $mdIconProvider) {
-  //For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise('/sessions');
-  $stateProvider
-    .state('sessions', {
-      url: '/sessions',
-      templateUrl: 'views/sessions.html',
-      controller: 'SessionsCtrl as sessions'
-    })
-  .state('session', {
-    url: '/session',
-    templateUrl: 'views/session.html',
-    controller: 'SessionCtrl as session'
-  })
-  .state('speakers', {
-    url: '/speakers',
-    templateUrl: 'views/speakers.html',
-    controller: 'SpeakersCtrl as speakers'
-  })
-  .state('speaker', {
-    url: '/speaker',
-    templateUrl: 'views/speaker.html',
-    controller: 'SpeakerCtrl as speaker'
-  })
-  .state('questionnaire', {
-    url: '/questionnaire',
-    templateUrl: 'views/questionnaire.html',
-    controller: 'QuestionnaireCtrl as questionnaire'
-  })
-  .state('plan', {
-    url: '/plan',
-    templateUrl: 'views/plan.html',
-    controller: 'PlanCtrl as plan'
-  })
-  .state('commentaires', {
-    url: '/commentaires',
-    templateUrl: 'views/commentaires.html',
-    controller: 'CommentairesCtrl as commentaires'
-  });
-
-  $mdIconProvider
-    .icon('menu', 'bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg')
-    .icon('speakers', 'bower_components/material-design-icons/social/svg/production/ic_people_24px.svg')
-    .icon('plan', 'bower_components/material-design-icons/maps/svg/production/ic_map_24px.svg')
-    .icon('commentaires', 'bower_components/material-design-icons/communication/svg/production/ic_comment_24px.svg')
-    .icon('sessions', 'bower_components/material-design-icons/action/svg/production/ic_theaters_24px.svg');
-  $mdThemingProvider.theme('default')
-    .primaryPalette('red')
-    .accentPalette('blue');
-})
-.controller('SessionsCtrl', function SessionsCtrl($mdSidenav, $state){
-  var self = this;
-  function toggleMenu() {
-    $mdSidenav('left').toggle();
-  }
-
-  function goState(s){
-    self.toggleMenu();
-    $state.go(s);
-  }
-
-  self.toggleMenu = toggleMenu;
-  self.go = goState;
-  self.selected     = null;
-})
-.controller('SessionCtrl', function SessionCtrl(){
-  
-})
-.controller('SpeakersCtrl', function SpeakersCtrl(){
-  
-})
-.controller('SpeakerCtrl', function SpeakerCtrl(){
-  
-})
-.controller('PlanCtrl', function PlanCtrl(){
-  
-})
-.controller('QuestionnaireCtrl', function QuestionnaireCtrl(){
-  
-})
-.controller('CommentairesCtrl', function CommentairesCtrl(){
-  
-})
-;
+  .module('ctCompanionApp', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch',
+	'ngMaterial',
+	'users'
+  ]) .config(function($mdThemingProvider, $mdIconProvider){
+                  $mdIconProvider
+                      .defaultIconSet("./images/svg/avatars.svg", 128)
+                      .icon("menu"       , "./images/svg/menu.svg"        , 24)
+                      .icon("share"      , "./images/svg/share.svg"       , 24)
+                      .icon("google_plus", "./images/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./images/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./images/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./images/svg/phone.svg"       , 512);
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('brown')
+                          .accentPalette('red');
+              });
+})();

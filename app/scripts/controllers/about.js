@@ -8,8 +8,8 @@
  * Controller of the ctCompanionApp
  */
 angular.module('ctCompanionApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
+  .controller('AboutCtrl', function () {
+    this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'

@@ -28,13 +28,13 @@ md-list .md-button {
   text-align: left;
   width: 100%;
 }
-md-list .md-button.selected {
-  color: #03a9f4;
-}
+  md-list .md-button.selected {
+    color: #03a9f4;
+  }
 
-md-sidenav  md-list {
-  padding: 0px 0px 8px 0px;
-}
+  md-sidenav  md-list {
+    padding: 0px 0px 8px 0px;
+  }
 
 
 /* Primary content area */
@@ -127,8 +127,4 @@ span.name {
   font-weight: bold;
   font-size:1.1em;
   padding-left:5px;
-}
-.sessions md-divider {
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
