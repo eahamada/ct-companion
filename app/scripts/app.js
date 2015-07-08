@@ -12,14 +12,29 @@
 angular
   .module('ctCompanionApp', [
     'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
 	'ngMaterial',
+'ui.router',
 	'users'
-  ]) .config(function($mdThemingProvider, $mdIconProvider){
+  ]) .config(function($mdThemingProvider, $mdIconProvider,$stateProvider, $urlRouterProvider){
+ $urlRouterProvider.otherwise('/home');
+    
+    $stateProvider
+        
+        // HOME STATES AND NESTED VIEWS ========================================
+        .state('home', {
+            url: '/home',
+            templateUrl: 'views/partial-home.html'
+        })
+ // nested list with just some random string data
+    .state('home.paragraph', {
+        url: '/paragraph',
+        template: 'I could sure use a drink right now.'
+    })
+        
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        .state('about', {
+            // we'll get to this in a bit       
+        });
                   $mdIconProvider
                       .defaultIconSet("./images/svg/avatars.svg", 128)
                       .icon("menu"       , "./images/svg/menu.svg"        , 24)
